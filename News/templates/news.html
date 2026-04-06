@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ sarlavha }}</title>
+</head>
+<body>
+
+    <ul>
+        {% for article in articles %}
+        <li>
+            <a href="{% url 'new_detail' article.id %}">
+                <h1>
+                    {{ article.title }}
+                </h1>
+            </a>
+            <p>
+                {{ article.content }}
+            </p>
+            <small>
+                Ko'rishlar: {{ article.view_count }}
+            </small>
+        </li>
+        {% endfor %}
+
+    </ul>
+</body>
+</html>

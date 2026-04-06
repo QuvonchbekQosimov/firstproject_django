@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ article.title }}</title>
+</head>
+<body>
+    <h1>
+        <a href="{% url 'news' %}">
+            Yangiliklarga qaytish
+        </a>
+        <br>
+        <a href="{% url 'new_detail' article.id %}">
+            News
+        </a>
+    </h1>
+    <h2>
+        {{ article.title }}
+    </h2>
+    <p>
+        {{ article.content }}
+    </p>
+</body>
+</html>

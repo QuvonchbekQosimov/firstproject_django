@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <h3>{{ title }}</h3>
+    <ul>
+        {% for capital in capitals %}
+            <li>
+                {{ capital.name }} {{ capital.country }}
+                {{ capital.population }} {{ capital.nationality }}
+                {{ capital.square }}
+            </li>
+        {% endfor %}
+    </ul>
+  <h1>
+      {{ yakun }}
+  </h1>
+  </body>
+</html>
