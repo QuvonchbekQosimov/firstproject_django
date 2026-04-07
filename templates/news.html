@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ sarlavha }}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+
+<div>
+    {# menu #}
+    <ul type="none" class="menu">
+        {% for category in categories %}
+        <li>
+            <a href="#">
+                {{ category.name }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+    <ul>
+        {% for article in articles %}
+        <li>
+            <a href="{% url 'new_detail' article.id %}">
+                <h1>
+                    {{ article.title }}
+                </h1>
+            </a>
+            <p>
+                {{ article.content }}
+            </p>
+            <img class="image" src="{{ article.get_image }}">
+            <br>
+            <small>
+                Ko'rishlar: {{ article.view_count }}
+            </small>
+        </li>
+        {% endfor %}
+
+    </ul>
+</body>
+</html>
