@@ -11,13 +11,23 @@
 <div>
     {# menu #}
     <ul type="none" class="menu">
+    <li>
+            <a href="{% url 'news' %}">
+                Home
+            </a>
+        </li>
         {% for category in categories %}
         <li>
-            <a href="#">
+            <a href="{% url 'by_category' category.id %}">
                 {{ category.name }}
             </a>
         </li>
         {% endfor %}
+    <li>
+            <a href="#">
+                Login
+            </a>
+        </li>
     </ul>
 </div>
     <ul>

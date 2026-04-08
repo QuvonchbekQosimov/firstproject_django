@@ -12,6 +12,19 @@ def news(request):
         'sarlavha':'Jahon yangiliklari'
     }
     return render(request, 'news.html', context=context)
+
+
+def by_category(request, id):
+    articles = Article.objects.filter(category=id)
+    categories = Category.objects.all()
+    context = {
+        'articles': articles,
+        'categories': categories,
+        'sarlavha':'Jahon yangiliklari'
+    }
+    return render(request, 'news.html', context=context)
+
+
 def new_detail(request, id):
     article = Article.objects.get(id=id)
     context = {
