@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,12 +8,9 @@
 <body>
     <h1>
         <a href="{% url 'news' %}">
-            Yangiliklarga qaytish
-        </a>
-        <br>
-        <a href="{% url 'new_detail' article.id %}">
             News
         </a>
+        <br>
     </h1>
     <h2>
         {{ article.title }}
@@ -20,5 +18,10 @@
     <p>
         {{ article.content }}
     </p>
+
+    <h3 id="result">
+        Result
+    </h3>
+<script src="{% static 'js/action.js' %}"></script>
 </body>
 </html>
